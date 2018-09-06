@@ -1,0 +1,35 @@
+
+addons:
+  apt:
+    packages:
+    - aria2
+#before_install:
+branches:
+  only:
+  - develop
+  - master
+
+dist: trusty
+env:
+#  global:
+  matrix:
+  - IMAGE_ARG_IMAGE_TAG=2.4.6
+  - IMAGE_ARG_IMAGE_TAG=2.4.5
+  - IMAGE_ARG_IMAGE_TAG=2.4.4
+  - IMAGE_ARG_IMAGE_TAG=2.3.5
+  - IMAGE_ARG_IMAGE_TAG=2.2.2
+  - IMAGE_ARG_IMAGE_TAG=2.1.2
+
+group: edge
+#install: true
+
+#before_script:
+script:
+- while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
+- bash build.sh
+- kill %1
+#after_script:
+
+services:
+- docker
+sudo: required
