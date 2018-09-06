@@ -7,7 +7,6 @@ services:
       service: base-elasticsearch2
     container_name: ${CONTAINER_HOST_NAME:-elasticsearch2}
     hostname: ${CONTAINER_HOST_NAME:-elasticsearch2}
-    network_mode: bridge
     ports:
     - "${ELASTICSEARCH_9200_PORT:-9200}:9200"
     - "${ELASTICSEARCH_9300_PORT:-9300}:9300"
