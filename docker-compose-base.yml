@@ -1,0 +1,11 @@
+
+version: '2.1'
+services:
+  base-elasticsearch2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - IMAGE_ARG_IMAGE_TAG=${IMAGE_ARG_IMAGE_TAG:-2.4.4}
+    image: ${IMAGE_PREFIX:-cirepo}/${IMAGE_NAME:-elasticsearch2}:${IMAGE_TAG:-2.4.4}
+    restart: always
