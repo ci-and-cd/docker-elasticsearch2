@@ -13,7 +13,7 @@ services:
     networks:
       local-network:
         ipv4_address: 172.16.238.24
-        ipv6_address: 2001:3984:3989::24
+        #ipv6_address: 2001:3984:3989::24
     ulimits:
       memlock:
         soft: -1
@@ -30,7 +30,7 @@ networks:
       driver: default
       config:
       - subnet: 172.16.238.0/24
-      - subnet: 2001:3984:3989::/64
+      #- subnet: 2001:3984:3989::/64
 
 volumes:
   data:
