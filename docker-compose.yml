@@ -7,13 +7,14 @@ services:
       service: base-elasticsearch2
     container_name: ${CONTAINER_HOST_NAME:-elasticsearch2}
     hostname: ${CONTAINER_HOST_NAME:-elasticsearch2}
-    ports:
-    - "${ELASTICSEARCH_9200_PORT:-9200}:9200"
-    - "${ELASTICSEARCH_9300_PORT:-9300}:9300"
     networks:
       local-network:
         ipv4_address: 172.16.238.24
         #ipv6_address: 2001:3984:3989::24
+    ports:
+    - "${ELASTICSEARCH_9200_PORT:-9200}:9200"
+    - "${ELASTICSEARCH_9300_PORT:-9300}:9300"
+    restart: always
     ulimits:
       memlock:
         soft: -1

@@ -11,6 +11,7 @@ services:
     ports:
     - "${ELASTICSEARCH_9200_PORT:-9200}:9200"
     - "${ELASTICSEARCH_9300_PORT:-9300}:9300"
+    restart: always
     ulimits:
       memlock:
         soft: -1
