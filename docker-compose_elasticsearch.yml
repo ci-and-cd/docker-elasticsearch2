@@ -17,8 +17,8 @@ services:
       instance.name: ${LABEL_INSTANCE_NAME:-127.0.0.1/elasticsearch2/standalone}
     network_mode: bridge
     ports:
-    - "${EXTERNAL_ELASTICSEARCH_9200_PORT:-9200}:9200"
-    - "${EXTERNAL_ELASTICSEARCH_9300_PORT:-9300}:9300"
+    - "${EXTERNAL_ELASTICSEARCH2_9200_PORT:-9200}:9200"
+    - "${EXTERNAL_ELASTICSEARCH2_9300_PORT:-9300}:9300"
     restart: always
     ulimits:
       memlock:
